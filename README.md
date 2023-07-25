@@ -7,7 +7,3 @@ This is the code and associated datasets for the paper titled
 accepted at [ACL 2023](https://2023.aclweb.org/).
 
 -----
-
-# Code and Datasets
-
-Coming Soon...
