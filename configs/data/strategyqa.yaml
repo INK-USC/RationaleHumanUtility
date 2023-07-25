@@ -1,0 +1,25 @@
+_target_: src.data.data.DataModule
+
+dataset: strategyqa
+
+num_workers: ${setup.num_workers}
+data_path: "${data_dir}/${.dataset}/${model.arch}/"
+train_batch_size: ${setup.train_batch_size}
+eval_batch_size: ${setup.eval_batch_size}
+eff_train_batch_size: ${setup.eff_train_batch_size}
+mode: 'max'
+
+num_train: null
+num_dev: null
+num_test: null
+num_raw_test: null
+num_train_seed: 0
+num_dev_seed: 0
+num_test_seed: 0
+num_raw_test_seed: 0
+
+load_exp_id: null
+gen_mode: null
+incontext: null
+prompt_type: null
+presample: null

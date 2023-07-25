@@ -1,0 +1,13 @@
+_target_: src.model.lm.LanguageModel
+
+defaults:
+  - optimizer: hf_adamw
+  - scheduler: fixed
+
+model_type: lm
+arch: t5-base
+dataset: ${data.dataset}
+
+save_outputs: True
+save_exp_id: null
+gen_mode: null
