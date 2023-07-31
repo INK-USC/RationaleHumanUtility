@@ -33,6 +33,45 @@ If you end up using this code or the data, please cite our paper:
 
 ---------
 
+## Data Formats
+
+All of the processed human utility and generalization question data is annotated over the [StrategyQA dataset](https://allenai.org/data/strategyqa). Given that the public version of the dataset does not contain a test split, we provide our own train, test splits in ```data/strategyqa_processed_{split}.json``` files. 
+
+### Rationale Human Utility
+
+Rationale human utility data is provided in ```data/rationale_utility.json``` file. These are utility annotations on the **_test_** set of our split (provided above). Each line of the file is a JSON string with the following format - 
+
+```
+question: Question from our test split of StrategyQA
+rationale: _Generated_ rationale from a self-rationalizaing model
+rationale_source: Where the rationale is generated from. Models include GPT3, T5 Large and T5 3B.
+ground_truth_label: From the StrategyQA dataset
+human_predicted_label_before_rationale: Label that is predicted by annotators with just the question
+human_predicted_label_after_rationale: Label that is predicted by annotators after being shown the corresponding rationale
+rationale_utility: 1 for useful, 0 for unsure and -1 for not useful
+
+```
+### Generalization Questions
+
+For Gen-U experiments, we generate generalization questions for all our splits (train, dev, test) from GPT3 and validate these questions and answers from annotators. This data is present in ```data/generalisation_final_{split}.json``` files.
+
+Each key of this JSON is an original question (from the corresponding split of StrategyQA). The values are formatted in the following way - 
+
+```
+original_question: [(generalization_question1, generalization_question1_answer, generalization_question1_type),
+            (generalization_question2, generalization_question2_answer, generalization_question2_type)
+            ...
+            ]
+```
+
+Generalization questions are of the following tyoes - rephrase, similar or counterfactual. 
+
+### More Datasets/Details
+
+We provide processed datasets above. However if you require certain annotations that we use in our work -- like individual annotator utility annotations, or rationale property annotations, please email Brihi at ```brihijos@usc.edu```.
+
+---------
+
 ## Setting up the environment
 
 Make a folder titled ```ftru``` and place this GitHub repo __inside__ that folder.
