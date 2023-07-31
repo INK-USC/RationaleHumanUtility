@@ -66,6 +66,10 @@ original_question: [(generalization_question1, generalization_question1_answer, 
 
 Generalization questions are of the following tyoes - rephrase, similar or counterfactual. 
 
+### More Datasets/Details
+
+We provide processed datasets above. However if you require certain annotations that we use in our work -- like individual annotator utility annotations, or rationale property annotations, please email Brihi at ```brihijos@usc.edu```.
+
 ---------
 
 ## Setting up the environment
